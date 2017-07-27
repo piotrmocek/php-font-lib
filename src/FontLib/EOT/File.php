@@ -91,7 +91,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontCopyright() {
+  public function getFontCopyright() {
     return null;
   }
 
@@ -100,7 +100,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontName() {
+  public function getFontName() {
     return $this->header->data["FamilyName"];
   }
 
@@ -109,7 +109,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontSubfamily() {
+  public function getFontSubfamily() {
     return $this->header->data["StyleName"];
   }
 
@@ -118,7 +118,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontSubfamilyID() {
+  public function getFontSubfamilyID() {
     return $this->header->data["StyleName"];
   }
 
@@ -127,7 +127,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontFullName() {
+  public function getFontFullName() {
     return $this->header->data["FullName"];
   }
 
@@ -136,7 +136,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontVersion() {
+  public function getFontVersion() {
     return $this->header->data["VersionName"];
   }
 
@@ -145,7 +145,7 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontWeight() {
+  public function getFontWeight() {
     return $this->header->data["Weight"];
   }
 
@@ -154,7 +154,15 @@ class File extends \FontLib\TrueType\File {
    *
    * @return string|null
    */
-  function getFontPostscriptName() {
+  public function getFontPostscriptName() {
     return null;
+  }
+
+  public function getPreferredFamilyName() {
+    return $this->getFontName();
+  }
+
+  public function getPreferredSubfamilyName() {
+    return $this->getFontSubfamily();
   }
 }

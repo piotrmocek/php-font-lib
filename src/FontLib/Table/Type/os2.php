@@ -43,5 +43,9 @@ class os2 extends Table {
     "typoLineGap"         => self::int16,
     "winAscent"           => self::int16,
     "winDescent"          => self::int16,
+    "ulCodePageRange1"    => self::uint32,
+    "ulCodePageRange2"    => self::uint32,
+    "sxHeight"            => self::int16,
+    "sCapHeight"          => self::int16,
   );
 }

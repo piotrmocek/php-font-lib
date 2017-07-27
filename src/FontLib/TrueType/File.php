@@ -384,7 +384,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontCopyright() {
+  public function getFontCopyright() {
     return $this->getNameTableString(name::NAME_COPYRIGHT);
   }
 
@@ -393,7 +393,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontName() {
+  public function getFontName() {
     return $this->getNameTableString(name::NAME_NAME);
   }
 
@@ -402,7 +402,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontSubfamily() {
+  public function getFontSubfamily() {
     return $this->getNameTableString(name::NAME_SUBFAMILY);
   }
 
@@ -411,7 +411,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontSubfamilyID() {
+  public function getFontSubfamilyID() {
     return $this->getNameTableString(name::NAME_SUBFAMILY_ID);
   }
 
@@ -420,7 +420,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontFullName() {
+  public function getFontFullName() {
     return $this->getNameTableString(name::NAME_FULL_NAME);
   }
 
@@ -429,7 +429,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontVersion() {
+  public function getFontVersion() {
     return $this->getNameTableString(name::NAME_VERSION);
   }
 
@@ -438,7 +438,7 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontWeight() {
+  public function getFontWeight() {
     return $this->getTableObject("OS/2")->data["usWeightClass"];
   }
 
@@ -447,8 +447,16 @@ class File extends BinaryStream {
    *
    * @return string|null
    */
-  function getFontPostscriptName() {
+  public function getFontPostscriptName() {
     return $this->getNameTableString(name::NAME_POSTSCRIPT_NAME);
+  }
+
+  public function getPreferredFamilyName() {
+    return $this->getNameTableString(name::NAME_PREFERRE_FAMILY);
+  }
+
+  public function getPreferredSubfamilyName() {
+    return $this->getNameTableString(name::NAME_PREFERRE_SUBFAMILY);
   }
 
   function reduce() {

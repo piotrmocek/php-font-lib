@@ -24,11 +24,12 @@ class Font {
    * @return TrueType\File|null $file
    */
   public static function load($file) {
-      if(!file_exists($file)){
-          throw new FontNotFoundException($file);
-      }
-
     $header = file_get_contents($file, false, null, null, 4);
+
+    if (!$header) {
+      throw new FontNotFoundException($file);
+    }
+
     $class  = null;
 
     switch ($header) {
